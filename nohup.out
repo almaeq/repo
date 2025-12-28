@@ -1,0 +1,64 @@
+2025-12-28 13:27:27,382 [   2535]   WARN - org.apache.lucene.internal.vectorization.VectorizationProvider - Java vector incubator module is not readable. For optimal vector performance, pass '--add-modules jdk.incubator.vector' to enable Vector API.
+2025-12-28 13:27:28,361 [   3514]   WARN - #com.android.studio.ml.enterprise.login.StudioModelsOnboardingController$Companion - Auth state changed from AuthState.Initializing(isAuthorized=false) to AuthState.LoggedOut(isAuthorized=false)
+2025-12-28 13:28:17,082 [  52235]   WARN - #c.i.u.j.JBCefApp - JCefAppConfig.class is not from a JBR module, url: jar:file:/opt/android-studio/lib/lib.jar!/com/jetbrains/cef/JCefAppConfig.class (Use JBR bundled with the IDE)
+2025-12-28 13:28:18,746 [  53899]   WARN - #com.android.tools.ndk.HotfixForOCInitialTablesBuildingActivity - Overriding OCInitialTablesBuildingActivity with HotfixForOCInitialTablesBuildingActivity
+2025-12-28 13:28:19,397 [  54550]   WARN - #c.i.o.a.i.ActionUpdater - 3078 ms total to grab EDT 5 times to expand ToolWindowHeader$2#expandGroup@ToolwindowTitle (com.intellij.toolWindow.ToolWindowHeader$2). Use `ActionUpdateThread.BGT`.
+2025-12-28 13:28:19,898 [  55051]   WARN - #c.i.o.v.n.p.PersistentFSImpl - Can't find root[#165419] in persistence
+2025-12-28 13:28:22,681 [  57834]   WARN - #git4idea.status.GitStagingAreaHolder - Ignoring change under another root: GitFileStatus(index= , workTree=M, path=/home/alma/0prog2/repo/programacion-2-2025-trabajo-final-valencora/backend/nohup.out, origPath=null); root: /home/alma/0prog2/repo; mapped root: /home/alma/0prog2/repo/programacion-2-2025-trabajo-final-valencora
+2025-12-28 13:28:22,681 [  57834]   WARN - #git4idea.status.GitStagingAreaHolder - Ignoring change under another root: GitFileStatus(index= , workTree=M, path=/home/alma/0prog2/repo/programacion-2-2025-trabajo-final-valencora/proxy/src/main/java/com/um/eventosproxy/config/KafkaConfiguration.java, origPath=null); root: /home/alma/0prog2/repo; mapped root: /home/alma/0prog2/repo/programacion-2-2025-trabajo-final-valencora
+2025-12-28 13:28:59,601 [  94754]   WARN - #c.i.o.p.i.j.JdkAuto - Multiple SdkType candidates kotlin.sequences.TransformingSequence@5db8e891. Proceeding with a first candidate: JavaSDK
+2025-12-28 13:29:02,844 [  97997]   WARN - #c.i.o.v.n.p.PersistentFSImpl - file[996571, flags: 4]: top parent (id: 862592, name: 'org.jetbrains.kotlin-kotlin-stdlib-2.0.21-commonMain-WPEnbA.klib', flags: 775 parent: 0), is still not in the idToDirCache. path: [996520, 996492, 880213, 862592] [/org.jetbrains.kotlin-kotlin-stdlib-2.0.21-commonMain-WPEnbA.klib/default/linkdata/package_kotlin], cachedRoots.size(=342), roots.size(=342), pfs.roots.contains(862592)=false, fs.roots.contains(862592)=true, non-cached roots: 0, cached non-roots: 0, FS roots not PFS roots: 3916: 
+
+2025-12-28 13:29:05,289 [ 100442]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.jetbrains.kotlin:kotlin-stdlib:2.0.21'
+2025-12-28 13:29:05,289 [ 100442]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.jetbrains:annotations:23.0.0'
+2025-12-28 13:29:05,292 [ 100445]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.9.0'
+2025-12-28 13:29:05,300 [ 100453]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: com.google.guava:listenablefuture:1.0'
+2025-12-28 13:29:05,300 [ 100453]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.7.3'
+2025-12-28 13:29:05,300 [ 100453]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: com.squareup.okhttp3:okhttp:4.12.0'
+2025-12-28 13:29:05,300 [ 100453]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: com.squareup.okio:okio-jvm:3.9.1'
+2025-12-28 13:29:05,306 [ 100459]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.jetbrains.kotlinx:kotlinx-datetime-jvm:0.6.0'
+2025-12-28 13:29:05,306 [ 100459]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: junit:junit:4.13.2'
+2025-12-28 13:29:05,306 [ 100459]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.hamcrest:hamcrest-core:1.3'
+2025-12-28 13:29:05,340 [ 100493]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: androidx.concurrent:concurrent-futures-ktx:1.2.0'
+2025-12-28 13:29:05,393 [ 100546]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21'
+2025-12-28 13:29:05,397 [ 100550]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.21'
+2025-12-28 13:33:19,223 [ 354376]   WARN - #c.i.u.i.p.ProjectIndexableFilesFilterHealthCheck - Following files are indexable but they were NOT found in filter. Errors count: 75. Examples:
+file id=1004291 path=/home/alma/0prog2/repo/programacion-2-2025-trabajo-final-valencora/mobile/.idea
+file id=1004302 path=/home/alma/0prog2/repo/programacion-2-2025-trabajo-final-valencora/mobile/.idea/inspectionProfiles
+file id=1004303 path=/home/alma/0prog2/repo/programacion-2-2025-trabajo-final-valencora/mobile/.idea/inspectionProfiles/Project_Default.xml
+file id=1004304 path=/home/alma/0prog2/repo/programacion-2-2025-trabajo-final-valencora/mobile/.kotlin
+file id=1004307 path=/home/alma/0prog2/repo/programacion-2-2025-trabajo-final-valencora/mobile/gradle
+...
+2025-12-28 13:33:46,767 [ 381920]   WARN - Emulator: Pixel 8 Pro - Your GPU drivers may have a bug. Switching to software rendering.
+2025-12-28 13:33:47,118 [ 382271]   WARN - Emulator: Pixel 8 Pro - Setting read-only feature 'GLAsyncSwap' to '0'
+2025-12-28 13:33:47,296 [ 382449]   WARN - Emulator: Pixel 8 Pro - *** Basic token auth should only be used by android-studio ***
+2025-12-28 13:33:47,780 [ 382933]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:33:47,781 [ 382934]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:33:47,781 [ 382934]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:33:47,781 [ 382934]   WARN - Emulator: Pixel 8 Pro - Unknown XR viewport mode requested: 0, ignored.
+2025-12-28 13:33:47,781 [ 382934]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:33:47,781 [ 382934]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:33:47,781 [ 382934]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:33:47,781 [ 382934]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:33:47,840 [ 382993]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:33:51,292 [ 386445]   WARN - #com.android.ddmlib - Failed to start Emulator console for 5554
+2025-12-28 13:33:57,338 [ 392491]   WARN - #com.android.tools.idea.avdmanager.EmulatorConnectionListener - Emulator not ready yet, dev.bootcomplete = null
+2025-12-28 13:33:57,885 [ 393038]   WARN - #c.i.o.a.i.ActionUpdater - 2319 ms to call on BGT LiveEditNotificationAction#presentation@StreamingToolbarSecondary (com.android.tools.idea.editors.liveedit.ui.LiveEditNotificationAction)
+2025-12-28 13:33:57,886 [ 393039]   WARN - #c.i.o.a.i.ActionUpdater - 2933 ms to call on BGT LiveEditNotificationAction#presentation@StreamingToolbarSecondary (com.android.tools.idea.editors.liveedit.ui.LiveEditNotificationAction)
+2025-12-28 13:37:51,371 [ 626524]   WARN - Emulator: Pixel 8 Pro - stop: Not implemented
+2025-12-28 13:37:51,876 [ 627029]   WARN - #com.android.tools.idea.streaming.emulator.EmulatorController - android.emulation.control.EmulatorController/streamScreenshot call failed - UNAVAILABLE: Cancelling all calls
+2025-12-28 13:37:51,878 [ 627031]   WARN - #com.android.tools.idea.streaming.emulator.EmulatorController - android.emulation.control.EmulatorController/streamNotification call failed - UNAVAILABLE: Cancelling all calls
+2025-12-28 13:38:38,491 [ 673644]   WARN - Emulator: Pixel 8 Pro - Your GPU drivers may have a bug. Switching to software rendering.
+2025-12-28 13:38:38,769 [ 673922]   WARN - Emulator: Pixel 8 Pro - Setting read-only feature 'GLAsyncSwap' to '0'
+2025-12-28 13:38:38,939 [ 674092]   WARN - Emulator: Pixel 8 Pro - *** Basic token auth should only be used by android-studio ***
+2025-12-28 13:38:39,324 [ 674477]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:38:39,324 [ 674477]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:38:39,324 [ 674477]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:38:39,324 [ 674477]   WARN - Emulator: Pixel 8 Pro - Unknown XR viewport mode requested: 0, ignored.
+2025-12-28 13:38:39,325 [ 674478]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:38:39,325 [ 674478]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:38:39,325 [ 674478]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:38:39,325 [ 674478]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:38:39,325 [ 674478]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
+2025-12-28 13:38:42,056 [ 677209]   WARN - #com.android.ddmlib - Failed to start Emulator console for 5554
+2025-12-28 13:38:42,063 [ 677216]   WARN - #com.android.ddmlib - Failed to start Emulator console for 5554

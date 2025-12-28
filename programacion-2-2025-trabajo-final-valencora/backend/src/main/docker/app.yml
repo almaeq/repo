@@ -11,6 +11,7 @@ services:
       - SPRING_LIQUIBASE_URL=jdbc:postgresql://postgresql:5432/backend
       - SPRING_ELASTICSEARCH_URIS=http://elasticsearch:9200
       - SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS=kafka:9092
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
     ports:
       - 127.0.0.1:8080:8080
     healthcheck:

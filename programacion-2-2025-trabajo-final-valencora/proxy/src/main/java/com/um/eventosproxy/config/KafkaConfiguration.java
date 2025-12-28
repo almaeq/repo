@@ -1,11 +1,7 @@
 package com.um.eventosproxy.config;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.clients.consumer.ConsumerRebalanceListener;
-import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.StringDeserializer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,22 +9,17 @@ import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
-import org.springframework.kafka.listener.ConsumerAwareListenerErrorHandler;
+import org.springframework.kafka.listener.ContainerProperties;
+import org.springframework.kafka.listener.DefaultErrorHandler;
+import org.springframework.kafka.listener.KafkaListenerErrorHandler;
+import org.springframework.util.backoff.FixedBackOff;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Collection;
 
-/**
- * Configuración de Kafka con manejo de errores mejorado.
- * Permite que la aplicación arranque incluso si Kafka no está disponible.
- */
-@Configuration
 @EnableKafka
+@Configuration
 public class KafkaConfiguration {
-
-    private static final Logger LOG = LoggerFactory.getLogger(KafkaConfiguration.class);
 
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
@@ -43,24 +34,8 @@ public class KafkaConfiguration {
         props.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
-        props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, true);
-
-
-        props.put("client.dns.lookup", "use_all_dns_ips");
-
-
-        props.put("metadata.max.age.ms", "300000");
-        props.put("connections.max.idle.ms", "540000");
-
-        // Configuración para reintentos y timeouts más largos
-        props.put("reconnect.backoff.ms", "50");
-        props.put("retry.backoff.ms", "100");
-        props.put("request.timeout.ms", "30000");
-        props.put("session.timeout.ms", "30000");
-        props.put("heartbeat.interval.ms", "10000");
-
-        LOG.info("🔧 Configurando Kafka Consumer. bootstrap-servers={}, group-id={}", bootstrapServers, groupId);
+        // Deshabilitar auto-commit para permitir ack manual
+        props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
         return new DefaultKafkaConsumerFactory<>(props);
     }
 
@@ -70,36 +45,33 @@ public class KafkaConfiguration {
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
 
-        // Agregar listener para detectar cuando el consumer se conecta
-        factory.getContainerProperties().setConsumerRebalanceListener(
-                new ConsumerRebalanceListener() {
-                    @Override
-                    public void onPartitionsRevoked(Collection<TopicPartition> partitions) {
-                        LOG.info("🔄 Particiones revocadas: {}", partitions);
-                    }
+        // Habilitar confirmación manual (ACK)
+        factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
 
-                    @Override
-                    public void onPartitionsAssigned(Collection<TopicPartition> partitions) {
-                        LOG.info("✅ Particiones asignadas al consumer: {}", partitions);
-                    }
-                }
-        );
+        // Asignar el manejador de reintentos al contenedor
+        factory.setCommonErrorHandler(containerErrorHandler());
 
-        LOG.info("🔧 KafkaListenerContainerFactory configurado");
         return factory;
     }
 
     /**
-     * Bean para manejar errores en los listeners de Kafka.
-     * Esto permite que la aplicación continúe funcionando aunque haya errores
-     * al procesar mensajes de Kafka.
+     * Manejador de errores del CONTENEDOR (Internal).
+     * Se encarga de los reintentos y el BackOff.
      */
-    @Bean
-    public ConsumerAwareListenerErrorHandler kafkaErrorHandler() {
-        return (message, exception, consumer) -> {
-            LOG.error("❌ Error al procesar mensaje de Kafka: {}", exception.getMessage(), exception);
-            // No re-lanzar la excepción para evitar que el consumer se detenga
-            return null;
+    public DefaultErrorHandler containerErrorHandler() {
+        return new DefaultErrorHandler(new FixedBackOff(1000L, 3));
+    }
+
+    /**
+     * Manejador de errores del LISTENER (Requerido por @KafkaListener).
+     * Este bean satisface la dependencia "kafkaErrorHandler" que pide tu consumidor.
+     * Simplemente relanza la excepción para que el contenedor la maneje.
+     */
+    @Bean("kafkaErrorHandler")
+    public KafkaListenerErrorHandler listenerErrorHandler() {
+        return (message, exception) -> {
+            // Relanzamos la excepción para que el DefaultErrorHandler (arriba) haga los reintentos
+            throw exception;
         };
     }
 }
