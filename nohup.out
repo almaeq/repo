@@ -62,3 +62,5 @@ file id=1004307 path=/home/alma/0prog2/repo/programacion-2-2025-trabajo-final-va
 2025-12-28 13:38:39,325 [ 674478]   WARN - Emulator: Pixel 8 Pro - Client not connected yet. Ignoring message!
 2025-12-28 13:38:42,056 [ 677209]   WARN - #com.android.ddmlib - Failed to start Emulator console for 5554
 2025-12-28 13:38:42,063 [ 677216]   WARN - #com.android.ddmlib - Failed to start Emulator console for 5554
+2025-12-28 16:17:46,242 [10221395]   WARN - #git4idea.status.GitStagingAreaHolder - Ignoring change under another root: GitFileStatus(index= , workTree=M, path=/home/alma/0prog2/repo/programacion-2-2025-trabajo-final-valencora/backend/nohup.out, origPath=null); root: /home/alma/0prog2/repo; mapped root: /home/alma/0prog2/repo/programacion-2-2025-trabajo-final-valencora
+2025-12-28 16:17:46,242 [10221395]   WARN - #git4idea.status.GitStagingAreaHolder - Ignoring change under another root: GitFileStatus(index= , workTree=M, path=/home/alma/0prog2/repo/programacion-2-2025-trabajo-final-valencora/backend/src/main/docker/services.yml, origPath=null); root: /home/alma/0prog2/repo; mapped root: /home/alma/0prog2/repo/programacion-2-2025-trabajo-final-valencora

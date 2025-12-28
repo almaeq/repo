@@ -16,3 +16,8 @@ services:
     extends:
       file: ./kafka.yml
       service: kafka
+
+  redis:
+    extends:
+      file: redis.yml
+      service: redis
